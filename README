@@ -1,0 +1,13 @@
+Free geo ip service implementation for SilverStripe.
+
+
+See http://freegeoip.net for details
+
+Usage:
+add this to your mysite/_config.php
+Geoip::$default_country_code = FreeGeoipService::get_country_code();
+
+Please note that the free lookup service is restricted to 1000 requests per hour,
+run your own if you need more.
+
+set static $lookup_url to the url of your service
