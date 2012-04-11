@@ -30,7 +30,7 @@ class FreeGeoipService {
 		if(isset($_SERVER['REMOTE_ADDR'])) {
 			$ip = $_SERVER['REMOTE_ADDR'];
 			$url = self::$lookup_url."json/{$ip}";
-			if($response = file_get_contents($url)) {
+			if($response = @file_get_contents($url)) {
 				$data = json_decode($response);
 				if(Geoip::countryCode2name($data->country_code)) {
 					$code = $data->country_code;
